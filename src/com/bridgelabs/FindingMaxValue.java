@@ -6,7 +6,17 @@
 
 package com.bridgelabs;
 
-public class FindingMaxValue {
+public class FindingMaxValue<T extends Comparable<T>> {
+
+	T a1, a2, a3;
+
+	public FindingMaxValue(T a1, T a2, T a3) {
+		super();
+		this.a1 = a1;
+		this.a2 = a2;
+		this.a3 = a3;
+	}
+
 	/*
 	 * Generic method to compare any type of data.
 	 * 
@@ -25,6 +35,7 @@ public class FindingMaxValue {
 		return max;
 
 	}
+
 	public static void main(String[] args) {
 		Integer a1 = 10, a2 = 8, a3 = 9;
 		System.out.println("Maximum value is : " + maxOFValues(a1, a2, a3));
