@@ -6,45 +6,39 @@
 
 package com.bridgelabs;
 
+import java.util.Arrays;
+
 public class FindingMaxValue<T extends Comparable<T>> {
 
-	T a1, a2, a3;
+	T[] elements;
 
-	public FindingMaxValue(T a1, T a2, T a3) {
-		super();
-		this.a1 = a1;
-		this.a2 = a2;
-		this.a3 = a3;
+	public FindingMaxValue(T[] elements) {
+		this.elements = elements;
 	}
 
 	/*
-	 * Generic method to compare any type of data.
+	 * Generic method to store values in array and return maximum value.
 	 * 
-	 * @param a1: first value to compare.
+	 * @param elements.
 	 * 
-	 * @param a2: second value to compare.
-	 * 
-	 * @param a3: third value to compare.
 	 */
-	public static <T extends Comparable<T>> T maxOFValues(T a1, T a2, T a3) {
-		T max = a1;
-		if (a2.compareTo(max) > 0)
-			max = a2;
-		if (a3.compareTo(max) > 0)
-			max = a3;
+	public static <T extends Comparable<T>> T maxOFValues(T[] elements) {
+		Arrays.sort(elements);
+		int lenght = elements.length;
+		T max = elements[lenght - 1];
 		return max;
-
 	}
 
 	public static void main(String[] args) {
-		Integer a1 = 10, a2 = 8, a3 = 9;
-		System.out.println("Maximum value is : " + maxOFValues(a1, a2, a3));
 
-		Float b1 = 10.8f, b2 = 12.9f, b3 = 9.9f;
-		System.out.println("Maximum value is : " + maxOFValues(b1, b2, b3));
+		Integer[] intMax = { 1, 82, 5, 80, 4, 87, 100, 58 };
+		System.out.println("Maximum value is: " + maxOFValues(intMax));
 
-		String c1 = "S", c2 = "A", c3 = "M";
-		System.out.println("Maximum value is : " + maxOFValues(c1, c2, c3));
+		Float[] floatMax = { 1.6f, 87.8f, 82.8f, 80.2f, 4.8f };
+		System.out.println("Maximum value is: " + maxOFValues(floatMax));
+
+		String[] stringMax = { "S", "A", "M" , "B", "M"};
+		System.out.println("Maximum value is: " + maxOFValues(stringMax));
 
 	}
 
