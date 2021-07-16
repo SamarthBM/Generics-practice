@@ -15,22 +15,7 @@ public class FindingMaxValue<T extends Comparable<T>> {
 	public FindingMaxValue(T[] elements) {
 		this.elements = elements;
 	}
-	/*
-	 * Generic method to extend to.print max value to standard output.
-	 * 
-	 * @param elements: elements in array.
-	 * 
-	 * @param max: max value in array
-	 * 
-	 */
-
-	public static <T> void printMax(T[] elements, T max) {
-		for (T element : elements) {
-			System.out.println(element);
-		}
-		System.out.printf("%d of %d is: ", max, elements);
-	}
-
+	
 	/*
 	 * Generic method to store values in array and return maximum value.
 	 * 
@@ -41,19 +26,22 @@ public class FindingMaxValue<T extends Comparable<T>> {
 		Arrays.sort(elements);
 		int lenght = elements.length;
 		T max = elements[lenght - 1];
+		System.out.printf("Max value is %s ", max);
 		return max;
 	}
 
 	public static void main(String[] args) {
 
 		Integer[] intMax = { 1, 82, 5, 80, 4, 87, 100, 58 };
-		System.out.println("Maximum value is: " + maxOFValues(intMax));
+		 maxOFValues(intMax);
+		 System.out.println();
 
 		Float[] floatMax = { 1.6f, 87.8f, 82.8f, 80.2f, 4.8f };
-		System.out.println("Maximum value is: " + maxOFValues(floatMax));
+		 maxOFValues(floatMax);
+		 System.out.println();
 
 		String[] stringMax = { "S", "A", "M" };
-		System.out.println("Maximum value is: " + maxOFValues(stringMax));
+		maxOFValues(stringMax);
 
 	}
 
